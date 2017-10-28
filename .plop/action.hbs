@@ -3,11 +3,13 @@ import {createLogic} from 'redux-logic';
 
 export const {{pascalCase name}} = createAction("{{constantCase name}}");
 
+const defaultState = {};
+
 export const reducer = handleActions({
     [{{pascalCase name}}]: (state, action) => {
         return state;
     }
-});
+},defaultState);
 
 export const logic = createLogic({
     type: {{pascalCase name}},

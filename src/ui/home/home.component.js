@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
-import {push} from 'react-router-redux';
+import {Actions as RouterActions} from 'react-native-router-flux';
 import {connect} from "react-redux";
 
 class HomeComponent extends React.Component {
@@ -21,7 +21,7 @@ export default Home = connect(
     }),
     () => ({
         onTestPressed: () => {
-            return push("/test");
+            return RouterActions.test();
         }
     }))(HomeComponent);
 
