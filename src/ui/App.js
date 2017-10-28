@@ -7,6 +7,7 @@ import Home from './home/home.component';
 import Test from './test-page/test-page.component';
 import {store} from "../core/";
 
+
 export default class App extends React.Component {
     render() {
         return (
