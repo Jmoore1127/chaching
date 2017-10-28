@@ -1,16 +1,32 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
 import {Actions as RouterActions} from 'react-native-router-flux';
 import {connect} from "react-redux";
+import {Body, Button, Container, Content, Form, Header, Input, Item, Text, Title} from "native-base";
 
 class HomeComponent extends React.Component {
     render() {
         const {onTestPressed} = this.props;
         return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-            <Button onPress={onTestPressed} title="Test2"/>
-        </View>
+        <Container>
+            <Header>
+                <Body>
+                    <Title>Welcome!</Title>
+                </Body>
+            </Header>
+            <Content>
+                <Form>
+                    <Item>
+                        <Input placeholder="Email" />
+                    </Item>
+                    <Item>
+                        <Input placeholder="Password" />
+                    </Item>
+                </Form>
+                <Button block onPress={onTestPressed}>
+                    <Text>Login</Text>
+                </Button>
+            </Content>
+        </Container>
         );
     }
 }
@@ -21,15 +37,7 @@ export default Home = connect(
     }),
     () => ({
         onTestPressed: () => {
-            return RouterActions.test();
+            return RouterActions.dashboard();
         }
     }))(HomeComponent);
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});

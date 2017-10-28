@@ -1,21 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {connect} from 'react-redux';
+//import { StyleSheet } from 'react-native';
+import {Container, Content, Text} from 'native-base';
+import NavHeader from '../nav-header/nav-header.component';
+import NavFooter from '../nav-footer/nav-footer.component';
 
-export default class {{pascalCase name}} extends React.Component {
+class {{pascalCase name}}Component extends React.Component {
     render() {
         return (
-        <View style={styles.container}>
-            <Text>{{pascalCase name}}</Text>
-        </View>
+        <Container>
+            <NavHeader title="{{pascalCase name}}"/>
+            <Content>
+                <Text>{{pascalCase name}}</Text>
+            </Content>
+            <NavFooter />
+        </Container>
         );
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
+export {{pascalCase name}} = connect(() => ({}), () => ({}))({{pascalCase name}}Component);
+
+//const styles = StyleSheet.create({
+//    container: {
+//        flex: 1,
+//        backgroundColor: '#fff',
+//        alignItems: 'center',
+//        justifyContent: 'center',
+//    },
+//});
