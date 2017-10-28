@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 
 export default class App extends React.Component {
